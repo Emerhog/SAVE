@@ -1,3 +1,4 @@
-Route::get('/api_list', [ToDoListController::class, 'apiList_index']);
+use App\Http\Controllers\ToDoListController;
 
+Route::get('/api_list', [ToDoListController::class, 'apiList_index']);
 Route::post('/add_deal_create', [ToDoListController::class, 'addDeal_create']);
