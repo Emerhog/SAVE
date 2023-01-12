@@ -1,0 +1,14 @@
+public function addDeal_create(Request $request){
+        $deal = new ToDoList();
+        $deal->header = $request->header;
+        $deal->description = $request->description;	//сохранение
+        $deal->save();					  записи в БД
+        return view('/add_deal');
+    }
+__________________________________________________
+    public function index(){
+        /* $deals = DB::table('to_do_lists')->paginate(3); */
+        $deals = ToDoList::paginate(3);
+        return view('/welcome', ['deals' => $deals]);	//Вывод всех записей	
+    }							  из БД(2способа)
+__________________________________________________
