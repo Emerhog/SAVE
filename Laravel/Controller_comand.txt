@@ -1,3 +1,9 @@
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\ToDoList;
+use DB;
+
 public function addDeal_create(Request $request){
         $deal = new ToDoList();
         $deal->header = $request->header;

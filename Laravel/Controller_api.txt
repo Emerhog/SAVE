@@ -1,0 +1,12 @@
+namespace App\Http\Controllers\api;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\ToDoList;
+
+class DealListController extends Controller
+{
+    public function index(){
+        return ToDoList::all();
+    }
+}
