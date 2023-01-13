@@ -1,0 +1,41 @@
+//Получение данных
+
+$(document).ready(function(){
+    $("#btn_click").bind("click", function(){
+        let db_name = $("#input_name").val();
+        $.ajax ({
+            url: "db.php",
+            type: "POST",
+            dataType: 'json',
+            data: ({
+                name_of_dataBase: db_name,
+            }),
+            success: function(response){
+                $("#text_place").text(response[0]["migration"]);
+                console.log(response);
+            }
+        });
+    });
+});
+__________________________________________
+//Отправка данных 
+
+<script type="text/javascript">   
+    $("#айди формы").submit(function(e) {
+    e.preventDefault();    
+    var formData = new FormData(this);
+    
+    $.ajax({
+        url: "куда отправить.php",
+        type: 'POST',
+        data: formData,
+        success: function() {
+            alert("Отправленно!");
+            $('#айди формы')[0].reset();
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+    });
+</script>
